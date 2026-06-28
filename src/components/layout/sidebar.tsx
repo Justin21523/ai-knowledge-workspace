@@ -11,9 +11,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-// import { ScrollArea } from "@/components/ui/scroll-area";
 
-// Define navigation items with their paths and icons
 const navItems = [
   {
     title: "Dashboard",
@@ -46,10 +44,6 @@ interface SidebarProps {
   className?: string;
 }
 
-/**
- * Sidebar component displaying main navigation links.
- * Highlights the active route based on the current pathname.
- */
 export function Sidebar({ className }: SidebarProps) {
   const pathname = usePathname();
 
@@ -63,8 +57,6 @@ export function Sidebar({ className }: SidebarProps) {
           <div className="space-y-1">
             {navItems.map((item) => {
               const Icon = item.icon;
-              // Check if the current path matches the item's href
-              // For root path '/', we do an exact match. For others, we check if it starts with the href.
               const isActive = 
                 item.href === "/" 
                   ? pathname === "/" 

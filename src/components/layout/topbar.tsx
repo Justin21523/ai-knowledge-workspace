@@ -22,13 +22,9 @@ interface TopbarProps {
   title: string;
 }
 
-/**
- * Topbar component displaying the page title, mobile menu trigger, and user profile.
- */
 export function Topbar({ title }: TopbarProps) {
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-      {/* Mobile Menu Trigger: Only visible on small screens (default), hidden on md and up */}
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">
@@ -41,13 +37,10 @@ export function Topbar({ title }: TopbarProps) {
         </SheetContent>
       </Sheet>
 
-      {/* Page Title */}
       <h1 className="text-lg font-semibold md:text-xl">{title}</h1>
 
-      {/* Spacer to push user profile to the right */}
       <div className="flex-1" />
 
-      {/* User Profile Dropdown */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-9 w-9 rounded-full">
